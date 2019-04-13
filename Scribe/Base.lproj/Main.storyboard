@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,91 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Scribe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQM-fu-4LF">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="85"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCRIBE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zb8-3p-N6K">
+                                        <rect key="frame" x="158" y="46" width="98" height="31"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="26"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.81912277919999998" green="0.0" blue="0.03831269667" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="6rT-V7-DBU"/>
+                                    <constraint firstAttribute="bottom" secondItem="zb8-3p-N6K" secondAttribute="bottom" constant="8" id="NOF-f8-QQg"/>
+                                    <constraint firstItem="zb8-3p-N6K" firstAttribute="centerX" secondItem="hQM-fu-4LF" secondAttribute="centerX" id="b8X-Bh-9d3"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Np-vd-oeN" customClass="CircleButton" customModule="Scribe" customModuleProvider="target">
+                                <rect key="frame" x="172" y="736" width="70" height="70"/>
+                                <color key="backgroundColor" red="0.81912277919999998" green="0.0" blue="0.03831269667" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="7mJ-Ns-53i"/>
+                                    <constraint firstAttribute="height" constant="70" id="YTp-fE-xRN"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="35"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="playBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CdB-Zf-GRA"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLAY &amp; TRANSRIBE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qc5-Bf-y15">
+                                <rect key="frame" x="101.5" y="831" width="211" height="27"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Tab the Button below to transcribe the audio embeded in this app" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QUV-dk-aKy">
+                                <rect key="frame" x="20" y="93" width="374" height="635"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="vz9-kO-TU0">
+                                <rect key="frame" x="172" y="736" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="ckr-oX-zB2"/>
+                                    <constraint firstAttribute="height" constant="70" id="fzx-wg-z6Y"/>
+                                </constraints>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hQM-fu-4LF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="6Lf-tC-Ipi"/>
+                            <constraint firstItem="qc5-Bf-y15" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9y7-hM-hPH"/>
+                            <constraint firstItem="3Np-vd-oeN" firstAttribute="top" secondItem="QUV-dk-aKy" secondAttribute="bottom" constant="8" id="A0O-hm-Xw3"/>
+                            <constraint firstItem="3Np-vd-oeN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MfT-hW-f1r"/>
+                            <constraint firstItem="vz9-kO-TU0" firstAttribute="centerX" secondItem="3Np-vd-oeN" secondAttribute="centerX" id="QzG-d1-gWp"/>
+                            <constraint firstItem="hQM-fu-4LF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="S8U-EK-hTg"/>
+                            <constraint firstItem="qc5-Bf-y15" firstAttribute="top" secondItem="3Np-vd-oeN" secondAttribute="bottom" constant="25" id="YuP-b9-9aW"/>
+                            <constraint firstItem="QUV-dk-aKy" firstAttribute="top" secondItem="hQM-fu-4LF" secondAttribute="bottom" constant="8" id="bjk-DC-AAs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QUV-dk-aKy" secondAttribute="trailing" constant="20" id="kFV-BW-Fkv"/>
+                            <constraint firstItem="vz9-kO-TU0" firstAttribute="centerY" secondItem="3Np-vd-oeN" secondAttribute="centerY" id="kqo-hd-pAK"/>
+                            <constraint firstItem="hQM-fu-4LF" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="pLV-1P-RJr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qc5-Bf-y15" secondAttribute="bottom" constant="4" id="rfj-tK-Bm4"/>
+                            <constraint firstItem="QUV-dk-aKy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="sF9-hP-OEJ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="activitySpinner" destination="vz9-kO-TU0" id="HVF-wR-jQr"/>
+                        <outlet property="transcriptionTextField" destination="QUV-dk-aKy" id="Oqc-V1-KKR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
     </scenes>
 </document>
